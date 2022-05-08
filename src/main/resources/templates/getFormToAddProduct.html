@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/font-awesome.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+<th:block th:include="HomeHeaderAfterLogin"></th:block>
+<form action="/api/v1/addProductAfterAdminLogin" method="post">
+    <table align="center" width="600" height="150">
+        <tr>
+            <th height="60"><font size="6">Add a New Product</font></th>
+        </tr>
+        <tr>
+            <th height="60"><font size="4">ID of the Product :</font></th>
+            <th><input type="text" name="id" /></th>
+        </tr>
+        <tr>
+            <th height="60"><font size="4">Category Name:</font></th>
+            <th><input type="text" name="category" /></th>
+        </tr>
+        <tr>
+            <th height="60"><font size="4">Name of the Product :</font></th>
+            <th><input type="text" name="name" /></th>
+        </tr>
+        <tr>
+            <th height="60"><font size="4">Price of the Product :</font></th>
+            <th><input type="text" name="price" /></th>
+        </tr>
+        <tr><th></th>
+            <th><input type="submit" value="Save" />
+                &emsp;&emsp;&emsp;&emsp;
+                <input type="reset" value="Clear" /></th>
+        </tr>
+    </table>
+</form>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<th:block th:include="_footer"></th:block>
+</body>
+</html>

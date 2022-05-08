@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login | E-Shopper</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css}" />
+</head>
+<body>
+<th:block th:include="/_header"></th:block>
+<th:block th:include="/_menu"></th:block>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="Mobiles.html">Mobiles</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="Laptops.html">Laptops</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="Clothing.html">Clothing</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="Bags.html">Bags</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="Shoes.html">Shoes</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <h2 class="title text-center">Featured Items</h2>
+                    <th:block th:each="cat : ${catalog}">
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="">
+                                    <div class="productinfo text-center">
+                                        <p th:utext="${cat.id}"></p>
+                                        <h2 th:utext="${cat.name}"></h2>
+                                        <p th:utext="${cat.price}"></p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i
+                                                class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </div>
+                                </div>
+                                <!-- <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li><a href="#"><i class="fa fa-money"></i>Buy</a></li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<th:block th:include="/_footer"></th:block>
+</body>
+</html>
